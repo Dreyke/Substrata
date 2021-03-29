@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dreyke Boone">
+  <meta name="description" content="Substrata provides AI-powered event management software for planners, marketing, and sales teams that helps engage attendees and drive business value">
+  <title>Substrata: AI Event Platform</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://use.typekit.net/jbr4auv.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="scripts/modernizr.min.js"></script>
+</head>
+<body>
+  <header role="banner">
+    <nav role="navigation">
+      <h1 class="logo">
+        <a href="index.html">Substrata</a>
+      </h1>
+      <input type="checkbox" class="nav-menu-btn" id="nav-menu-btn">
+      <label for="nav-menu-btn" class="nav-menu-icon">
+        <span class="nav-icon"></span>
+      </label>
+      <ul class="menu">
+        <li>
+          <a href="productOverview.html">Product Overview</a>
+        </li>
+        <li>
+          <a href="integrations.html">Integrations</a>
+        </li>
+      </ul>
+      <form action="contact.html">
+        <button type="submit" class="contact-sales-btn">Contact Sales</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <section class="contact-section">
+      <h1 class="contact-section-content contact-section-title">Contact Sales</h1>
+      <h3 class="contact-section-content contact-section-paragraph">Contact us today to learn how Substrata can support your business and your events. Fill out the form below and our sales team will advise you on the best solutions</h3>
+    </section>
+    <!-- Contact Form -->
+    <form action="#" method="post" role="form" class="contact-form">
+      <div class="wrapper">
+        <div class="contact-row">
+          <label for="fname" class="contact-form-row required">First Name</label>
+          <input type="text" name="fname" id="fname" class="contact-form-input" required>
+          <label for="lname" class="contact-form-row required">Last Name</label>
+          <input type="text" name="lname" id="lname" class="contact-form-input" required>
+        </div>
+        <div class="contact-row">
+          <label for="email" class="contact-form-row required">Email</label>
+          <input type="email" name="email" id="email" class="contact-form-input" required>
+          <label for="pnumber" class="contact-form-row required">Phone Number</label>
+          <input type="tel" name="pnumber" id="pnumber" class="contact-form-input" required>
+        </div>
+        <div class="contact-row">
+          <label for="jobtitle" class="contact-form-row">Job Title</label>
+          <input type="text" name="jobtitle" id="jobtitle" class="contact-form-input">
+        </div>
+        <div class="contact-row">
+          <label for="orgname" class="contact-form-row required">Organization Name</label>
+          <input type="text" name="orgname" id="orgname" class="contact-form-input" required>
+          <label for="orgtype" class="contact-form-row">Organization Type</label>
+          <input type="text" name="orgtype" id="orgtype" class="contact-form-input">
+        </div>
+        <div class="contact-row">
+          <label for="orgsize" class="contact-form-row">Organization Size</label>
+          <select name="orgsize" id="orgsize" class="contact-form-input">
+            <option disabled selected value="">
+              Please Select
+            </option>
+            <option value="1-50">
+              1-50
+            </option>
+            <option value="50-99">
+              50-99
+            </option>
+            <option value="100-250">
+              100-250
+            </option>
+            <option value="251-1500">
+              251-1500
+            </option>
+            <option value="1500+">
+              1500+
+            </option>
+          </select>
+        </div>
+        <button type="submit" name="contactus" class="contact-button">Contact Us</button>
+      </div>
+    </form>
+  </main>
+  <footer role=contentinfo>
+    <ul class="footer-links">
+      <li>
+        <a href="productOverview.html">Product Overview</a>
+      </li>
+      <li>
+        <a href="integrations.html">Integrations</a>
+      </li>
+      <li>
+        <a href="contact.html">Contact Sales</a>
+      </li>
+    </ul>
+    <p class="footer-logo">Substrata</p>
+    <p>Developed by Dreyke Boone</p>
+    <p>Contact: dreykeb@asu.edu</p>
+    <p>This site is for educational purposes only</p>
+  </footer>
+</body>
+</html>

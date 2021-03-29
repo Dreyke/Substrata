@@ -1,0 +1,1356 @@
+@charset "UTF-8";
+/* CSS Document */
+/* Global styling */
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+header button {
+  cursor: pointer;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #FFF;
+}
+
+header:not(.home) a {
+  color: #535768;
+}
+
+/* Contact Sales Button Styling*/
+.contact-sales-btn {
+  height: 40px;
+  width: 147px;
+  border: none;
+  color: #FFF;
+  border-radius: 30px;
+  font-weight: 300;
+  /* retrieved code for gradient from https://cssgradient.io/ */
+  background: rgb(248,107,100);
+  background: -moz-linear-gradient(311deg, rgba(248,107,100,1) 0%, rgba(249,90,133,1) 92%, rgba(250,82,147,1) 100%);
+  background: -webkit-linear-gradient(311deg, rgba(248,107,100,1) 0%, rgba(249,90,133,1) 92%, rgba(250,82,147,1) 100%);
+  background: linear-gradient(311deg, rgba(248,107,100,1) 0%, rgba(249,90,133,1) 92%, rgba(250,82,147,1) 100%);
+}
+
+/* Add shadow all contact sales buttons except the nav button */
+main .contact-sales-btn {
+  box-shadow: 0 2px 4px #333;
+}
+
+/* Mobile Styles */
+/* Min width 320px max width 767 */
+/* Contact Sales Button Styling - Mobile View*/
+@media (max-width: 767px) {
+  .contact-sales-btn {
+    height: 30px;
+    width: 125px;
+    border: none;
+    color: #FFF;
+    font-size: 12px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px #333;
+    font-weight: 300;
+    /* retrieved code for gradient from https://cssgradient.io/ */
+    background: rgb(248,107,100);
+    background: -moz-linear-gradient(311deg, rgba(248,107,100,1) 0%, rgba(249,90,133,1) 92%, rgba(250,82,147,1) 100%);
+    background: -webkit-linear-gradient(311deg, rgba(248,107,100,1) 0%, rgba(249,90,133,1) 92%, rgba(250,82,147,1) 100%);
+    background: linear-gradient(311deg, rgba(248,107,100,1) 0%, rgba(249,90,133,1) 92%, rgba(250,82,147,1) 100%);
+  }
+}
+
+/* Mobile Navigation Styles */
+@media (max-width:767px) {
+  /* Hides the contact sales button in mobile view */
+  header button {
+    display: none;
+  }
+
+  .home {
+    width: 100%;
+    position: absolute;
+  }
+
+  .logo a {
+    float: left;
+    display: block;
+    padding: 14px 20px;
+    font-family: sofia-pro-soft, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .menu a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #333;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    background-color: #FFF;
+  }
+
+  /* Adds hamburger menu for mobile view */
+  /* Some code is from https://www.youtube.com/watch?v=sjrp1FEHnyA though I made
+  * significant changes to the code. Areas that did not change are the
+  * transitions and width. I believe this falls well underneath the syllabus guidelines.
+  * Please let me know if this needs to be changed. Applies only to lines 80-138
+   */
+  .nav-menu-icon {
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+  }
+
+  .nav-menu-icon .nav-icon {
+    background: #FFF;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+  }
+
+  .nav-menu-icon .nav-icon:before {
+    background: #FFF;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    transition: all .2s ease-out;
+  }
+
+  .nav-menu-icon .nav-icon:after {
+    background: #FFF;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -5px;
+    transition: all .2s ease-out;
+  }
+
+  .nav-menu-btn {
+    display: none;
+  }
+
+  .nav-menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+
+  .nav-menu-btn:checked ~ .nav-menu-icon .nav-icon {
+    background: transparent;
+  }
+
+  .nav-menu-btn:checked ~ .nav-menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .nav-menu-btn:checked ~ .nav-menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  /* set nav to a different color and view for non-home pages */
+  header:not(.home) .nav-menu-icon .nav-icon {
+    background: #535768;
+  }
+
+  header:not(.home) .nav-menu-icon .nav-icon:before {
+    background: #535768;
+  }
+
+  header:not(.home) .nav-menu-icon .nav-icon:after {
+    background: #535768;
+  }
+}
+
+/* Mobile Homepage */
+@media (max-width:767px) {
+  .home-top-section {
+    background-image: url('../images/main-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    height: 8%;
+    padding: 8% 5% 0 3%;
+  }
+
+  .home-top-section h1 {
+    font-size: 26px;
+    margin-top: 30px;
+  }
+
+  .home-top-section form {
+    padding: 6% 0 2% 1%;
+  }
+
+  /* Hide text for mobile view */
+  @media screen and (max-width: 767px) {
+    .home-top-section h3 {
+      display: none;
+    }
+  }
+
+  .home-content-container {
+    padding-top: 50px;
+    padding-bottom: 56px;
+  }
+
+  .home-content {
+    text-align: center;
+    margin-bottom: 2.5em;
+  }
+
+  .home-content h2 {
+    font-weight: 600;
+  }
+
+  .home-content h3 {
+    margin-top: 1.5em;
+    padding-left: 2.125em;
+    padding-right: 2.125em;
+    font-weight: 400;
+    line-height: 1.8rem;
+  }
+
+  .text-component-wrapper {
+    margin-bottom: 3em;
+  }
+
+  .home-middle-section {
+    background: #F5F7FC;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-middle-section h2 {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 38px;
+    padding-bottom: 6%;
+  }
+
+  .home-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 560px;
+  }
+
+  .home-content > a {
+    display: none;
+  }
+
+  /* Hide middle section images for mobile view*/
+  .home-middle-section img {
+    display: none;
+  }
+}
+
+/* Mobile Integration Page */
+@media (max-width:767px) {
+  .integration-top-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .integration-top-section-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .integration-top-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 38px;
+  }
+
+  .integration-top-section-paragraph {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .integration-title {
+    margin-top: 64px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .integration-content-container {
+    padding-top: 50px;
+    padding-bottom: 56px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .integration-content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .integration-content p {
+    line-height: 1.5rem;
+    margin-bottom: 64px;
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .integration-content h2 {
+    font-family: sofia-pro, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 26px;
+  }
+
+  .intg-image {
+    width: 130px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Mobile Contact Page Styles */
+@media (max-width:767px) {
+  .contact-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .contact-section-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .contact-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 48px;
+  }
+
+  .contact-section-paragraph {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  /* Contact Form Styles */
+  .contact-form {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 8%;
+    max-width: 32em;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    padding: 6%;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.100091);
+  }
+
+  .contact-form-row {
+    display: block;
+    padding-bottom: 15px;
+  }
+
+  .required::after {
+    content: " *";
+    color: red;
+  }
+
+  .contact-form-input {
+    position: relative;
+    margin-bottom: 32px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #9C9C9C;
+    padding: 8px;
+  }
+
+  .contact-button {
+    padding: 16px 32px;
+    position: relative;
+    background-color: #009AFF;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    line-height: 17px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+/* Mobile Footer Styles */
+@media (max-width:767px) {
+  footer {
+    background-color: #2B2C5D;
+    color: #FFF;
+    padding: 24px;
+    font-weight: 300;
+  }
+
+  .footer-links li {
+    margin-top: 0;
+    margin-bottom: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: #FFF;
+  }
+
+  footer p {
+    padding-top: 12px;
+  }
+
+  .footer-logo {
+    font-family: sofia-pro-soft, sans-serif;
+    font-size: 18px;
+  }
+}
+
+
+/* Tablet Styles */
+/* Min width 768 max width 1024px */
+/* Navigation - sets the menu to a hamburger menu */
+@media (min-width: 768px) and (max-width:1024px) {
+  header button {
+    display: none;
+  }
+  /*Set nav background to transparent*/
+  .home {
+    width: 100%;
+    position: absolute;
+  }
+
+  nav {
+    padding: 2% 3%;
+  }
+  /* Set the Substrata logo text */
+  .logo {
+    font-size: 1.25em;
+    font-family: sofia-pro-soft, sans-serif;
+  }
+
+  .logo a {
+    float: left;
+    display: block;
+    padding: 14px 20px;
+    font-family: sofia-pro-soft, sans-serif;
+    font-weight: 400;
+  }
+
+  .menu a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #333;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    background-color: #FFF;
+  }
+
+  /* Adds hamburger menu for mobile view */
+  /* Some code is from https://www.youtube.com/watch?v=sjrp1FEHnyA though I made
+  * significant changes to the code. Areas that did not change are the
+  * transitions and width. I believe this falls well underneath the syllabus guidelines.
+  * Please let me know if this needs to be changed. Applies only to lines 80-138
+   */
+  .nav-menu-icon {
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+  }
+
+  .nav-menu-icon .nav-icon {
+    background: #FFF;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+  }
+
+  .nav-menu-icon .nav-icon:before {
+    background: #FFF;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    transition: all .2s ease-out;
+  }
+
+  .nav-menu-icon .nav-icon:after {
+    background: #FFF;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -5px;
+    transition: all .2s ease-out;
+  }
+
+  .nav-menu-btn {
+    display: none;
+  }
+
+  .nav-menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+
+  .nav-menu-btn:checked ~ .nav-menu-icon .nav-icon {
+    background: transparent;
+  }
+
+  .nav-menu-btn:checked ~ .nav-menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .nav-menu-btn:checked ~ .nav-menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  /* set nav to a different color and view for non-home pages */
+  header:not(.home) .nav-menu-icon .nav-icon {
+    background: #535768;
+  }
+
+  header:not(.home) .nav-menu-icon .nav-icon:before {
+    background: #535768;
+  }
+
+  header:not(.home) .nav-menu-icon .nav-icon:after {
+    background: #535768;
+  }
+}
+/* Tablet Homepage */
+@media (min-width: 768px) and (max-width:1024px) {
+  .home-top-section {
+    background-image: url('../images/main-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    height: 8%;
+    padding: 8% 5% 0 5.5%;
+  }
+
+  .home-top-section h1 {
+    font-size: 46px;
+    margin-top: 30px;
+  }
+
+  .home-top-section form {
+    padding: 6% 0% 2% 1%;
+  }
+
+  /* Hide text for tablet view */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .home-top-section h3 {
+      display: none;
+    }
+  }
+
+  .home-content-container {
+    padding-top: 50px;
+    padding-bottom: 56px;
+  }
+
+  .home-content {
+    text-align: center;
+    margin-bottom: 5em;
+  }
+
+  .home-content:nth-child(4) {
+    margin-top: 8em;
+  }
+
+  .home-content h2 {
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .home-content h3 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.8rem;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .home-content p {
+    color: #333;
+    text-decoration: underline;
+    font-weight: 300;
+  }
+
+  .text-component-wrapper {
+    margin-bottom: 3em;
+  }
+
+  .home-middle-section {
+    background: #F5F7FC;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .middle-content {
+    text-align: center;
+    padding-top: 4em;
+  }
+
+  .home-middle-section h2 {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 48px;
+    padding-bottom: 6%;
+  }
+
+  .middle-section-image-wrapper {
+    align-self: center;
+  }
+
+  .middle-section-image-wrapper:first-child {
+    padding-left: 4%;
+    width: 12em;
+  }
+
+  .middle-section-image-wrapper:last-child {
+    padding-right: 4%;
+    width: 14em;
+  }
+
+  .home-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 560px;
+  }
+}
+/* Tablet Integration Page */
+@media (min-width: 768px) and (max-width:1024px) {
+  .integration-top-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .integration-top-section-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .integration-top-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 38px;
+  }
+
+  .integration-top-section-paragraph {
+    font-weight: 300;
+    font-size: 1.15em;
+    width: 60%;
+    line-height: 28px;
+  }
+
+  .integration-title {
+    margin-top: 64px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+
+  .integration-content-container {
+    padding-top: 50px;
+    padding-bottom: 56px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .integration-content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .integration-content p {
+    line-height: 2rem;
+    font-weight: 300;
+    font-size: 1.25em;
+    margin-bottom: 64px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .integration-content h2 {
+    font-weight: 600;
+    font-size: 26px;
+  }
+
+  .intg-image {
+    width: 160px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Tablet Contact Page */
+@media (min-width: 768px) and (max-width:1024px) {
+  .contact-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .contact-section-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .contact-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 26px;
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .contact-section-paragraph {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    width: 90%;
+  }
+
+  /* Contact Form Styles */
+  .contact-form {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    padding: 96px;
+    max-width: 32em;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    padding: 38px;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.100091);
+  }
+
+  .contact-form-row {
+    display: block;
+    padding-bottom: 15px;
+  }
+
+  .required::after {
+    content: " *";
+    color: red;
+  }
+
+  .contact-form-input {
+    position: relative;
+    margin-bottom: 32px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #9C9C9C;
+    padding: 8px;
+  }
+
+  .contact-button {
+    padding: 16px 32px;
+    position: relative;
+    background-color: #009AFF;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    line-height: 17px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+    margin: 10px auto;
+    display: block;
+  }
+}
+/* Tablet Footer */
+@media (min-width: 768px) and (max-width:1024px) {
+  footer {
+    background-color: #2B2C5D;
+    color: #FFF;
+    padding: 24px;
+    font-weight: 300;
+  }
+
+  .footer-links li {
+    margin-top: 0;
+    margin-bottom: 32px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: #FFF;
+  }
+
+  footer p {
+    padding-top: 12px;
+  }
+
+  .footer-logo {
+    font-family: sofia-pro-soft, sans-serif;
+    font-size: 18px;
+  }
+}
+
+/* Desktop Styles */
+/* max width 1025px */
+/* Desktop Navigation Styles */
+@media (min-width:1025px) {
+  /* Hide checkbox*/
+  .nav-menu-btn, .nav-menu-icon {
+    display: none;
+  }
+
+  /* Center menu items*/
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+  }
+
+  .menu li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+  }
+  /*Set nav background to transparent*/
+  .home {
+    width: 100%;
+    position: absolute;
+  }
+  /*Set menu items to white text*/
+  .logo a {
+    color: #fff;
+  }
+  /* set the Substrata logo text */
+  .logo {
+    font-size: 1.5em;
+    font-family: sofia-pro-soft, sans-serif;
+    font-weight: 400;
+  }
+}
+
+/* Desktop Homepage Styles */
+@media (min-width:1025px) {
+  .home-top-section {
+    background-image: url('../images/main-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    color: #FFF;
+    height: 26em;
+    padding: 8% 5% 0% 10%;
+    text-align: left;
+  }
+
+  .home-top-section h1 {
+    font-size: 50px;
+  }
+
+  .home-top-section h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    width: 38em;
+    line-height: 32px;
+    padding-left: 5px;
+  }
+
+  .home-content-container {
+    padding-top: 50px;
+    padding-bottom: 56px;
+  }
+
+  .home-content {
+    display: flex;
+    margin-bottom: 5em;
+    justify-content: center;
+  }
+
+  .home-content:first-child {
+    margin-top: 4em;
+    height: 250px;
+  }
+
+  .home-content:nth-child(2) {
+    height: 500px;
+  }
+
+  .home-content:nth-child(4) {
+    margin-top: 10em;
+    height: 600px;
+  }
+
+  .home-content:nth-child(5) {
+    height: 500px;
+  }
+
+  .home-content a {
+    color: #333;
+    text-decoration: underline;
+    font-weight: 300;
+  }
+
+  .content-wrapper {
+    padding: 0 96px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+  }
+
+  .is-swap {
+    flex-direction: row-reverse;
+  }
+
+  .is-swap > .text-component-wrapper {
+    padding-left: 8em;
+  }
+
+  .text-component-wrapper, .image-component-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .image-component-wrapper {
+    max-width: 680px;
+  }
+
+  .text-component-wrapper h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .text-component-wrapper h3 {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .image-component-wrapper {
+    align-self: center;
+  }
+
+  .globe-img {
+    width: 80%;
+    height: 20%;
+  }
+
+  .data-image {
+    width: 80%;
+    height: 20%;
+  }
+
+  .home-middle-section {
+    background: #F5F7FC;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .middle-content {
+    text-align: center;
+    padding-top: 4em;
+  }
+
+  .home-middle-section h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    padding-bottom: 6%;
+  }
+
+  .middle-section-image-wrapper {
+    align-self: center;
+  }
+
+  .middle-section-image-wrapper:first-child {
+    padding-left: 8em;
+    width: 17.5em;
+  }
+
+  .middle-section-image-wrapper:last-child {
+    padding-right: 8em;
+    width: 20em;
+  }
+}
+
+/* Desktop Integration Page Styles */
+@media (min-width:1025px) {
+  .integration-top-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .integration-top-section-content {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .integration-top-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .integration-top-section-paragraph {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .integration-title {
+    margin-top: 64px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .integration-content-container {
+    padding-top: 80px;
+    padding-bottom: 56px;
+    margin: auto;
+    max-width: 1440px;
+    text-align: center;
+  }
+
+  .integration-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .grid-container {
+    flex: 1;
+    padding-bottom: 80px;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 64px;
+  }
+
+  .integration-content p {
+    line-height: 2rem;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .integration-content h2 {
+    font-family: sofia-pro, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 32px;
+  }
+
+  .intg-image {
+    width: 130px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Desktop Product Overview Page Styles*/
+@media (min-width:1025px) {
+  .product-overview-top-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .product-overview-top-section-content {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .product-overview-top-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .product-overview-top-section-paragraph {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .product-overview-title {
+    margin-top: 64px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    margin-top: 30px;
+    justify-content: center;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .product-card {
+    width: 37vw;
+    margin: 0 auto 30px;
+    height: 250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.100081);
+  }
+
+  .product-info {
+    text-align: center;
+    width: 75%;
+  }
+
+  .product-info h3 {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  .product-info p {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 4%;
+  }
+}
+
+/* Desktop Contact Page Styles*/
+@media (min-width:1025px) {
+  /* Contact Sales Title Section */
+  .contact-section {
+    background-color: #F5F7FC;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .contact-section-content {
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px 32px;
+    text-align: center;
+  }
+
+  .contact-section-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .contact-section-paragraph {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 32px;
+  }
+  /* Contact Sales Form */
+  .contact-form {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    padding: 96px;
+    width: 100%;
+    max-width: 44em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wrapper {
+    padding: 48px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.100091);
+    width: 100%;
+  }
+
+  .contact-form-row {
+    display: block;
+    padding-bottom: 15px;
+  }
+
+  .contact-row:not(:nth-child(3)):not(:nth-child(5)):not(.contact-button) {
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .contact-row {
+    width: 100%;
+  }
+
+  .required::after {
+    content: " *";
+    color: red;
+  }
+
+  .contact-form-input {
+    position: relative;
+    margin-bottom: 32px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #9C9C9C;
+    padding: 8px;
+  }
+
+  .contact-button {
+    padding: 16px 32px;
+    position: relative;
+    background-color: #009AFF;
+    color: #fff;
+    font-weight: 300;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+    line-height: 17px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+/* Desktop Footer Styles*/
+@media (min-width:1025px) {
+  footer {
+    background-color: #2B2C5D;
+    color: #FFF;
+    padding: 24px;
+    font-weight: 300;
+  }
+
+  .footer-links {
+    padding-top: 1.125em;
+    column-count: 2;
+    column-gap: 7.5em;
+    float: right;
+    padding-right: 10%;
+  }
+
+  .footer-links li {
+    padding-top: 1em;
+    margin-bottom: 1.375em;
+    list-style: none;
+    font-size: 18px;
+  }
+
+  footer p {
+    padding-top: 1.125em;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 18px;
+  }
+
+  .footer-logo {
+    font-family: sofia-pro-soft, sans-serif;
+    font-size: 26px;
+  }
+}
